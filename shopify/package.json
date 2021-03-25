@@ -1,0 +1,26 @@
+{
+  "name": "shopify-template",
+  "devDependencies": {
+    "@types/node": "^13.13.2",
+    "@xdn/cli": "^2.28.0",
+    "@xdn/core": "^2.28.0",
+    "@xdn/devtools": "^2.28.0",
+    "@xdn/prefetch": "^2.28.0",
+    "concurrently": "^5.2.0",
+    "prettier": "^2.0.5",
+    "ts-loader": "^7.0.1",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "start": "concurrently \"webpack --watch\" \"xdn run\"",
+    "build": "webpack --progress && xdn build",
+    "prod": "xdn run --production",
+    "deploy": "npm run build && xdn deploy --skip-build",
+    "xdn": "xdn",
+    "xdn:update": "npm i --save-dev @xdn/cli@latest @xdn/core@latest @xdn/prefetch@latest",
+    "xdn:link": "yalc add @xdn/core @xdn/prefetch @xdn/cli"
+  }
+}

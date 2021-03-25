@@ -1,0 +1,20 @@
+{
+  "name": "default-starter-template",
+  "devDependencies": {
+    "@types/node": "^13.13.2",
+    "@xdn/cli": "^2.46.9",
+    "@xdn/core": "^2.46.9",
+    "@xdn/devtools": "^2.46.9",
+    "@xdn/prefetch": "^2.46.9",
+    "@xdn/starter": "^2.46.9",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "start": "xdn dev",
+    "build": "xdn build",
+    "prod": "xdn run --production",
+    "deploy": "npm run build && xdn deploy --skip-build"
+  },
+  "dependencies": {}
+}
