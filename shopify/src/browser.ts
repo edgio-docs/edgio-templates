@@ -1,4 +1,4 @@
-import install from '@xdn/prefetch/window/install'
+import install from '@layer0/prefetch/window/install'
 import cacheHost from './cacheHost'
 
 async function lateLoadContent() {

@@ -1,4 +1,4 @@
-import { Router } from '@xdn/core/router'
+import { Router } from '@layer0/core/router'
 import { CACHE_ASSETS, CACHE_SERVICE_WORKER } from './cache'
 import shoppingFlowRouteHandler from './shoppingFlowRouteHandler'
 

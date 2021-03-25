@@ -1,5 +1,5 @@
 import { skipWaiting, clientsClaim } from 'workbox-core'
-import { Prefetcher } from '@xdn/prefetch/sw'
+import { Prefetcher } from '@layer0/prefetch/sw'
 
 skipWaiting()
 clientsClaim()

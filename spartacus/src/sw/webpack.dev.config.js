@@ -2,7 +2,13 @@
 
 const path = require("path");
 const webpack = require("webpack");
-const webBuildTargetFolder = path.join(__dirname, "..", "..", "dist", "xdn-spartacus");
+const webBuildTargetFolder = path.join(
+  __dirname,
+  "..",
+  "..",
+  "dist",
+  "layer0-spartacus"
+);
 const targetServiceWorkerFilename = "service-worker.js";
 
 module.exports = {
@@ -10,13 +16,13 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   entry: {
     index: path.join(__dirname, "service-worker.ts"),
@@ -27,14 +33,14 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      XDN_PREFETCH_QUERY_PARAM: '__prefetch__',
-      XDN_PREFETCH_CACHE_NAME: 'prefetch',
-      XDN_HEADER_PREFETCH_QUERY_PARAM: '__header-prefetch__',
-      BACKEND_REQUESTS_RESPONSE_HEADER_NAME: 'x-xdn-backend-requests',
-      PREFETCH_HEADER_NAME: 'x-xdn-prefetch',
-      XDN_PREFETCH_HEADER_VALUE: '1',
-      NODE_ENV: 'production',
-      DEEP_FETCH_HEADER_NAME: 'x-xdn-deep-prefetch'
-    })
+      LAYER0_PREFETCH_QUERY_PARAM: "__prefetch__",
+      LAYER0_PREFETCH_CACHE_NAME: "prefetch",
+      LAYER0_HEADER_PREFETCH_QUERY_PARAM: "__header-prefetch__",
+      BACKEND_REQUESTS_RESPONSE_HEADER_NAME: "x-layer0-backend-requests",
+      PREFETCH_HEADER_NAME: "x-layer0-prefetch",
+      LAYER0_PREFETCH_HEADER_VALUE: "1",
+      NODE_ENV: "production",
+      DEEP_FETCH_HEADER_NAME: "x-layer0-deep-prefetch",
+    }),
   ],
 };

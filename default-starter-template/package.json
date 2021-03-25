@@ -1,20 +1,20 @@
 {
   "name": "default-starter-template",
   "devDependencies": {
+    "@layer0/cli": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/core": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/devtools": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/prefetch": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/starter": "^3.0.1-next-1616590389-ebf3f1dd.0",
     "@types/node": "^13.13.2",
-    "@xdn/cli": "^2.46.9",
-    "@xdn/core": "^2.46.9",
-    "@xdn/devtools": "^2.46.9",
-    "@xdn/prefetch": "^2.46.9",
-    "@xdn/starter": "^2.46.9",
     "prettier": "^2.0.5",
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "start": "xdn dev",
-    "build": "xdn build",
-    "prod": "xdn run --production",
-    "deploy": "npm run build && xdn deploy --skip-build"
+    "start": "layer0 dev",
+    "build": "layer0 build",
+    "prod": "layer0 run --production",
+    "deploy": "npm run build && layer0 deploy --skip-build"
   },
   "dependencies": {}
 }

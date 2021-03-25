@@ -1,5 +1,5 @@
-import { Router } from '@xdn/core/router'
-import { starterRoutes } from '@xdn/starter'
+import { Router } from '@layer0/core/router'
+import { starterRoutes } from '@layer0/starter'
 import { CACHE_ASSETS } from './cache'
 import shoppingFlowRouteHandler from './shoppingFlowRouteHandler'
 

@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  occBaseUrl: '{insert-your-xdn-domain-here}'
+  occBaseUrl: "{insert-your-layer0-domain-here}",
 };

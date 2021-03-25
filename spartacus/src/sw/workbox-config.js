@@ -1,6 +1,8 @@
 module.exports = {
-  globDirectory: "dist/xdn-spartacus/",
-  globPatterns: ["**/*.{css,eot,html,ico,jpg,js,json,png,svg,ttf,txt,webmanifest,woff,woff2,webm,xml}"],
+  globDirectory: "dist/layer0-spartacus/",
+  globPatterns: [
+    "**/*.{css,eot,html,ico,jpg,js,json,png,svg,ttf,txt,webmanifest,woff,woff2,webm,xml}",
+  ],
   globFollow: true, // follow symlinks
   globStrict: true, // fail the build if anything goes wrong while reading the files
   globIgnores: [
@@ -15,6 +17,6 @@ module.exports = {
   // Allows to avoid using cache busting for Angular files because Angular already takes care of that!
   dontCacheBustURLsMatching: new RegExp(".+.[a-f0-9]{20}..+"),
   maximumFileSizeToCacheInBytes: 4 * 1024 * 1024, // 4Mb
-  swSrc: "dist/xdn-spartacus/service-worker.js",
-  swDest: "dist/xdn-spartacus/service-worker.js",
+  swSrc: "dist/layer0-spartacus/service-worker.js",
+  swDest: "dist/layer0-spartacus/service-worker.js",
 };

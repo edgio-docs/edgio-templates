@@ -1,6 +1,6 @@
 module.exports = {
   routes: './src/routes.ts',
-  connector: '@xdn/starter',
+  connector: '@layer0/starter',
   backends: {
     origin: {
       domainOrIp: 'moovdemo.myshopify.com',

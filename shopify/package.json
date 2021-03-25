@@ -1,11 +1,12 @@
 {
   "name": "shopify-template",
   "devDependencies": {
+    "@layer0/cli": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/core": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/devtools": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/prefetch": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/starter": "^3.0.1-next-1616590389-ebf3f1dd.0",
     "@types/node": "^13.13.2",
-    "@xdn/cli": "^2.28.0",
-    "@xdn/core": "^2.28.0",
-    "@xdn/devtools": "^2.28.0",
-    "@xdn/prefetch": "^2.28.0",
     "concurrently": "^5.2.0",
     "prettier": "^2.0.5",
     "ts-loader": "^7.0.1",
@@ -15,12 +16,12 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "start": "concurrently \"webpack --watch\" \"xdn run\"",
-    "build": "webpack --progress && xdn build",
-    "prod": "xdn run --production",
-    "deploy": "npm run build && xdn deploy --skip-build",
-    "xdn": "xdn",
-    "xdn:update": "npm i --save-dev @xdn/cli@latest @xdn/core@latest @xdn/prefetch@latest",
-    "xdn:link": "yalc add @xdn/core @xdn/prefetch @xdn/cli"
+    "start": "concurrently \"webpack --watch\" \"layer0 run\"",
+    "build": "webpack --progress && layer0 build",
+    "prod": "layer0 run --production",
+    "deploy": "npm run build && layer0 deploy --skip-build",
+    "layer0": "layer0",
+    "layer0:update": "npm i --save-dev @layer0/cli@latest @layer0/core@latest @layer0/prefetch@latest",
+    "layer0:link": "yalc add @layer0/core @layer0/prefetch @layer0/cli"
   }
 }

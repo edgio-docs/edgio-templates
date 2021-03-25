@@ -1,16 +1,16 @@
-// This file was automatically added by xdn deploy.
+// This file was automatically added by layer0 deploy.
 // You should commit this file to source control.
 
-const { Router } = require('@xdn/core/router')
-const createAngularPlugin = require('@xdn/angular/router/createAngularPlugin')
+const { Router } = require("@layer0/core/router");
+const createAngularPlugin = require("@layer0/angular/router/createAngularPlugin");
 
-const PAGE_TTL = 60 * 60 * 24
-const FAR_FUTURE_TTL = 60 * 60 * 24 * 365 * 10
+const PAGE_TTL = 60 * 60 * 24;
+const FAR_FUTURE_TTL = 60 * 60 * 24 * 365 * 10;
 
-module.exports = app => {
-  const { angularMiddleware } = createAngularPlugin(app)
+module.exports = (app) => {
+  const { angularMiddleware } = createAngularPlugin(app);
   return new Router()
-    .match('/rest/v2/:path*', ({ cache, proxy }) => {
+    .match("/rest/v2/:path*", ({ cache, proxy }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -20,10 +20,10 @@ module.exports = app => {
           maxAgeSeconds: PAGE_TTL,
           staleWhileRevalidateSeconds: PAGE_TTL,
         },
-      })
-      return proxy('commerce')
+      });
+      return proxy("commerce");
     })
-    .match('/medias/:path*', ({ cache, proxy }) => {
+    .match("/medias/:path*", ({ cache, proxy }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -33,10 +33,10 @@ module.exports = app => {
           maxAgeSeconds: FAR_FUTURE_TTL,
           staleWhileRevalidateSeconds: 60 * 60 * 24,
         },
-      })
-      return proxy('commerce')
+      });
+      return proxy("commerce");
     })
-    .match('/Open-Catalogue/:path*', ({cache}) => {
+    .match("/Open-Catalogue/:path*", ({ cache }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -46,9 +46,9 @@ module.exports = app => {
           maxAgeSeconds: PAGE_TTL,
           staleWhileRevalidateSeconds: PAGE_TTL,
         },
-      })
+      });
     })
-    .match('/product/:path*', ({cache}) => {
+    .match("/product/:path*", ({ cache }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -58,7 +58,7 @@ module.exports = app => {
           maxAgeSeconds: PAGE_TTL,
           staleWhileRevalidateSeconds: PAGE_TTL,
         },
-      })
+      });
     })
-    .use(angularMiddleware)
-}
+    .use(angularMiddleware);
+};

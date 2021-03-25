@@ -1,8 +1,8 @@
-# XDN Spartacus for SAP Commerce Cloud (formerly SAP Hybris)
+# Layer0 Spartacus for SAP Commerce Cloud (formerly SAP Hybris)
 
 Spartacus is the official JavaScript headless front end for SAP Commerce Cloud. You can read more about Spartacus at the [official docs](https://sap.github.io/spartacus-docs/). Spartacus is written in Angular.
 
-This repo is a Moovweb XDN optimized template of SAP Spartacus. It leverages the official SAP Spartacus template and adds libraries to support XDN features that enhance Spartacus such as,
+This repo is a Moovweb Layer0 optimized template of SAP Spartacus. It leverages the official SAP Spartacus template and adds libraries to support Layer0 features that enhance Spartacus such as,
 
 - **CDN-as-JavaScript**: configure the edge within your application
 - **Serverless JavaScript**: zero devops with unlimited scale to power Spartacus server-side rendering (SSR) and OCC API orchestration
@@ -10,52 +10,52 @@ This repo is a Moovweb XDN optimized template of SAP Spartacus. It leverages the
 - **Iterative migration**: adopt Spartacus gradually, one page at a time
 - **Edge Experiments**: experiment and use A/B testing without sacrificing speed
 
-If you just want to get started quickly with Spartacus and deploy it to the XDN in a few minutes follow the [Getting started](#section_getting_started) section below.
+If you just want to get started quickly with Spartacus and deploy it to Layer0 in a few minutes follow the [Getting started](#section_getting_started) section below.
 
-The [Building from scratch](#section_building_from_scratch) section describes how to manually recreate an XDN optimized version of Spartacus from the official libraries. You don't need to do these steps but it's left there for the curious or for those trying to upgrade an existing Spartacus app.
+The [Building from scratch](#section_building_from_scratch) section describes how to manually recreate an Layer0 optimized version of Spartacus from the official libraries. You don't need to do these steps but it's left there for the curious or for those trying to upgrade an existing Spartacus app.
 
 # Getting Started
 
-If you have not already done so, sign up for an account on the [XDN Console](https://moovweb.app/signup?redirectTo=/) and install the [XDN CLI](cli)
+If you have not already done so, sign up for an account on [Layer0 Console](https://moovweb.app/signup?redirectTo=/) and install [Layer0 CLI](cli)
 
 ```bash
-npm i -g @xdn/cli
+npm i -g @layer0/cli
 ```
 
-Next, run the XDN create module to pull down the XDN Spartacus template to your machine:
+Next, run Layer0 create module to pull down Layer0 Spartacus template to your machine:
 
 ```bash
-npm create xdn-app@latest
+npm create layer0-app@latest
 ```
 
-The XDN create module will ask you a series of questions to configure your app. Make sure you answer as follows:
+The Layer0 create module will ask you a series of questions to configure your app. Make sure you answer as follows:
 
 - For `Select an app template` select `Spartacus`
 - For `Enter the hostname for the origin site (e.g. domain.com)` enter the domain of the SAP Commerce Cloud server that will serve as the OCC API backend for Spartacus.
 
-As an example, below is a sample transcript from running XDN create module:
+As an example, below is a sample transcript from running Layer0 create module:
 
 ```
-$ npm create xdn-app@latest
-✔ Enter a name for your app … my-xdn-site
+$ npm create layer0-app@latest
+✔ Enter a name for your app … my-layer0-site
 ✔ Select an app template › Spartacus
 ✔ Enter the hostname for the origin site (e.g. domain.com) … spartacusapiserver.mycompany.com
 ✔ Which package manager would you like to use? › npm
 ```
 
-Next, configure the `occBaseUrl` in `environment.ts`. If this is your first time getting started, the XDN will automatically assign you a URL of the format `{username}-{project-name}-default.moovweb-edge.io` where the `project-name` is pulled from the `package.json` of your project. For example, if your username is `alice` and your project has the name of `my-xdn-site`, then set the `occBaseUrl` in `environment.prod.ts` as follows and save your changes:
+Next, configure the `occBaseUrl` in `environment.ts`. If this is your first time getting started, Layer0 will automatically assign you a URL of the format `{username}-{project-name}-default.moovweb-edge.io` where the `project-name` is pulled from the `package.json` of your project. For example, if your username is `alice` and your project has the name of `my-layer0-site`, then set the `occBaseUrl` in `environment.prod.ts` as follows and save your changes:
 
 ```js
 export const environment = {
   production: false,
-  occBaseUrl: 'https://https://alice-xdn-spartacus-default.moovweb-edge.io'
+  occBaseUrl: "https://https://alice-layer0-spartacus-default.moovweb-edge.io",
 };
 ```
 
-Finally, deploy your site on the XDN using the `deploy` command:
+Finally, deploy your site on Layer0 using the `deploy` command:
 
 ```
-xdn deploy
+layer0 deploy
 ```
 
 Be aware that the deploy step will automatically build Spartacus for you which can take a few minutes. When the deploy finishes the output will confirm the final deployment URL. Below is an example:
@@ -65,17 +65,16 @@ Be aware that the deploy step will automatically build Spartacus for you which c
 > Uploading package
 done (9425ms)
 
-⌛ Deploying to the Moovweb XDN...
+⌛ Deploying to Layer0 Layer0...
 done (48565ms)
-🚀 Site deployed on default environment https://alice-my-xdn-site-default.moovweb-edge.io
+🚀 Site deployed on default environment https://alice-my-layer0-site-default.moovweb-edge.io
 ```
 
-Congrats! Your Spartacus site is now live on the XDN and you can login to the [XDN Console](https://moovweb.app) to manage your project.
+Congrats! Your Spartacus site is now live on Layer0 and you can login to [Layer0 Console](https://moovweb.app) to manage your project.
 
 # Building from scratch
 
-This section describes how to manually recreate an XDN optimized version of Spartacus from the official libraries. We recommend using the pre-built template in this repository but we've left these steps for those trying to upgrade an existing Spartacus app or looking to apply the XDN to a different version of Spartacus.
-
+This section describes how to manually recreate an Layer0 optimized version of Spartacus from the official libraries. We recommend using the pre-built template in this repository but we've left these steps for those trying to upgrade an existing Spartacus app or looking to apply Layer0 to a different version of Spartacus.
 
 The steps below are pulled from the Spartacus official docs, which are published here: https://sap.github.io/spartacus-docs/building-the-spartacus-storefront-from-libraries/
 
@@ -84,9 +83,10 @@ Make sure to install @angular/cli 8. Spartacus does not support 9. `npm install 
 Create an angular app
 
 > When prompted if you would like to add Angular routing, enter n for ‘no’.
+
 ```
-ng new xdn-spartacus-app --style=scss
-cd xdn-spartacus-app
+ng new layer0-spartacus-app --style=scss
+cd layer0-spartacus-app
 ```
 
 Add the Spartacus scaffold via schematic
@@ -95,7 +95,7 @@ Add the Spartacus scaffold via schematic
 ng add @spartacus/schematics --ssr
 ```
 
-Note the SSR parameter. This is needed for server-side rendering to work properly when deploying on the XDN.
+Note the SSR parameter. This is needed for server-side rendering to work properly when deploying on Layer0.
 
 Replace the contents of src/app/app.component.html with:
 
@@ -128,16 +128,16 @@ Update `app.module.ts` to include a `baseSite` configuration:
  }),
 ```
 
-## Preparing for deployment on the XDN
+## Preparing for deployment on Layer0
 
 ```
-npm install -g @xdn/cli
-xdn init
+npm install -g @layer0/cli
+layer0 init
 ```
 
-The app should now have `@xdn` dependencies installed and auto-generated `routes.js` and `xdn.config.js` files created by `@xdn/angular`.
+The app should now have `@layer0` dependencies installed and auto-generated `routes.js` and `layer0.config.js` files created by `@layer0/angular`.
 
-`@xdn/angular` follows Angular 9 SSR scaffolding so the following changes are necessary to the server build:
+`@layer0/angular` follows Angular 9 SSR scaffolding so the following changes are necessary to the server build:
 
 1. Modify the `output` block of `webpack.server.config.js` to a UMD library target with `default` export
 
@@ -161,26 +161,26 @@ output: {
 +export default app
 ```
 
-3. Update `xdn.config.js` to specify the location of the server build:
+3. Update `layer0.config.js` to specify the location of the server build:
 
 ```diff
 "use strict";
-// This file was automatically added by xdn deploy.
+// This file was automatically added by layer0 deploy.
 // You should commit this file to source control.
 const { join } = require('path')
 module.exports = {
   server: {
 +   path: join(__dirname, 'dist/server.js')
--   path: join(__dirname, 'dist/xdn-spartacus-app-server/main.js'),
+-   path: join(__dirname, 'dist/layer0-spartacus-app-server/main.js'),
 -   export: 'app'
   },
 }
 ```
 
-Configure a backend in `xdn.config.js` that points to the commerce API:
+Configure a backend in `layer0.config.js` that points to the commerce API:
 
 ```diff
-// This file was automatically added by xdn deploy.
+// This file was automatically added by layer0 deploy.
 // You should commit this file to source control.
 const { join } = require('path')
 module.exports = {
@@ -200,10 +200,10 @@ module.exports = {
 Configure `routes.js` to proxy API and media requests to the Commerce backend:
 
 ```diff
-// This file was automatically added by xdn deploy.
+// This file was automatically added by layer0 deploy.
 // You should commit this file to source control.
-const { Router } = require('@xdn/core/router')
-const createAngularPlugin = require('@xdn/angular/router/createAngularPlugin')
+const { Router } = require('@layer0/core/router')
+const createAngularPlugin = require('@layer0/angular/router/createAngularPlugin')
 module.exports = app => {
   const { angularMiddleware } = createAngularPlugin(app)
 - return new Router().use(angularMiddleware)
@@ -220,7 +220,7 @@ module.exports = app => {
 
 Here you can also configure all caching for individual paths.
 
-Configure the commerce baseUrl to point to XDN.
+Configure the commerce baseUrl to point to Layer0.
 
 In `app.module.ts`:
 
@@ -229,7 +229,7 @@ In `app.module.ts`:
   backend: {
     occ: {
 -     baseUrl: 'https://localhost:9002',
-+     baseUrl: 'https://YOUR_XDN_DEPLOYMENT_URL'
++     baseUrl: 'https://YOUR_LAYER0_DEPLOYMENT_URL'
       prefix: '/rest/v2/'
     }
   },
@@ -252,7 +252,7 @@ In `ìndex.html`:
 
 ```diff
 -<meta name="occ-backend-base-url" content="https://localhost:9002" />
-+<meta name="occ-backend-base-url" content="https://YOUR_XDN_DEPLOYMENT_URL" />
++<meta name="occ-backend-base-url" content="https://YOUR_LAYER0_DEPLOYMENT_URL" />
 ```
 
 In `environment.prod.ts`:
@@ -260,85 +260,86 @@ In `environment.prod.ts`:
 ```diff
 environment = {
   production: true,
-+ occBaseUrl: 'https://YOUR_XDN_DEPLOYMENT_URL',
++ occBaseUrl: 'https://YOUR_LAYER0_DEPLOYMENT_URL',
 };
 ```
 
-## Deploying to XDN
+## Deploying to Layer0
 
 ```
-xdn deploy
+layer0 deploy
 ```
 
 ## Adding prefetching
 
 ### Upstream request tracking
 
-Prefetching for a Spartacus app can be enabled by listening to upstream requests made when server-side rendering a specific page. `@xdn/prefetch` library will pick up on the upstream requests made by reading the `x-xdn-backend-requests` response header. An example scenario:
-1) User A lands on `/product/1`.
-2) `/product/1` has not been cached in the edge and thus will be server-side rendered.
-3) The rendering server has been modified to track upstream requests by patching `https.request`.
-4) The rendering server sets `x-xdn-backend-requests` to for example `/rest/v2/1;/rest/v2/2;`
-5) The HTML response for `/product/1` is now cached and for future requests served from the edge along with the `x-xdn-backend-requests` response header.
-6) User B lands on a page that has a link to `/product/1`. `/product/*path` has been configured with `cache.browser.spa: true`. Because of this configuration `@xdn/prefetch` will know to make a prefetch HEAD request for `/product/1` and only if `product/1` can be served from the edge will prefetch all requests specified in `x-xdn-backend-requests` response header.
-7) When user B click the link to `/product/1` the navigation will be faster since the requests needed to render the new page will be in service worker cache.
+Prefetching for a Spartacus app can be enabled by listening to upstream requests made when server-side rendering a specific page. `@layer0/prefetch` library will pick up on the upstream requests made by reading the `x-layer0-backend-requests` response header. An example scenario:
+
+1. User A lands on `/product/1`.
+2. `/product/1` has not been cached in the edge and thus will be server-side rendered.
+3. The rendering server has been modified to track upstream requests by patching `https.request`.
+4. The rendering server sets `x-layer0-backend-requests` to for example `/rest/v2/1;/rest/v2/2;`
+5. The HTML response for `/product/1` is now cached and for future requests served from the edge along with the `x-layer0-backend-requests` response header.
+6. User B lands on a page that has a link to `/product/1`. `/product/*path` has been configured with `cache.browser.spa: true`. Because of this configuration `@layer0/prefetch` will know to make a prefetch HEAD request for `/product/1` and only if `product/1` can be served from the edge will prefetch all requests specified in `x-layer0-backend-requests` response header.
+7. When user B click the link to `/product/1` the navigation will be faster since the requests needed to render the new page will be in service worker cache.
 
 Example implementation of upstream request tracking:
 
 ```js
-import 'zone.js/dist/zone-node';
+import "zone.js/dist/zone-node";
 
-import * as express from 'express';
-import { join } from 'path';
-import * as http from 'http'
-import * as https from 'https'
+import * as express from "express";
+import { join } from "path";
+import * as http from "http";
+import * as https from "https";
 
-import { createNamespace } from 'cls-hooked'
-const ns = createNamespace('app')
+import { createNamespace } from "cls-hooked";
+const ns = createNamespace("app");
 
-const originalHttpRequest = http.request
-const originalHttpsRequest = https.request
+const originalHttpRequest = http.request;
+const originalHttpsRequest = https.request;
 
 const requestTrackingMiddleware = (req, res, next) => {
-  ns.bindEmitter(req)
-  ns.bindEmitter(res)
+  ns.bindEmitter(req);
+  ns.bindEmitter(res);
   ns.run(() => {
-    patchHttp()
-    const requests = new Set()
+    patchHttp();
+    const requests = new Set();
     ns.set("requests", requests);
     next();
   });
 };
 
 const patchHttpModule = (module, orig) => {
-  module.request = ns.bind(function(...args) {
-    const requestsSet = ns.get('requests')
+  module.request = ns.bind(function (...args) {
+    const requestsSet = ns.get("requests");
     if (requestsSet && args[0]) {
-      let path
-      const options = args[0]
-      if (typeof options === 'string') {
-        path = options
+      let path;
+      const options = args[0];
+      if (typeof options === "string") {
+        path = options;
       } else {
-        path = options.path
+        path = options.path;
       }
-      const newSet = requestsSet.add(path)
-      ns.set('requests', newSet)
+      const newSet = requestsSet.add(path);
+      ns.set("requests", newSet);
     }
-    return orig(...args)
-  })
-}
+    return orig(...args);
+  });
+};
 
 const patchHttp = () => {
-  patchHttpModule(http, originalHttpRequest)
-  patchHttpModule(https, originalHttpsRequest)
-}
+  patchHttpModule(http, originalHttpRequest);
+  patchHttpModule(https, originalHttpsRequest);
+};
 
 // Express server
 const app = express();
 app.use(requestTrackingMiddleware);
 
 const PORT = process.env.PORT || 4200;
-const DIST_FOLDER = join(process.cwd(), 'dist/xdn-spartacus-app');
+const DIST_FOLDER = join(process.cwd(), "dist/layer0-spartacus-app");
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {
@@ -346,53 +347,54 @@ const {
   LAZY_MODULE_MAP,
   ngExpressEngine,
   provideModuleMap,
-} = require('./dist/xdn-spartacus-app-server/main');
+} = require("./dist/layer0-spartacus-app-server/main");
 
 app.engine(
-  'html',
+  "html",
   ngExpressEngine({
     bootstrap: AppServerModuleNgFactory,
     providers: [provideModuleMap(LAZY_MODULE_MAP)],
   })
 );
 
-app.set('view engine', 'html');
-app.set('views', DIST_FOLDER);
+app.set("view engine", "html");
+app.set("views", DIST_FOLDER);
 
 app.get(
-  '*.*',
+  "*.*",
   express.static(DIST_FOLDER, {
-    maxAge: '1y',
+    maxAge: "1y",
   })
 );
 
 // All regular routes use the Universal engine
-app.get('*', (req, res) => {
+app.get("*", (req, res) => {
   const callback = (err, html) => {
-    const requestsArray = Array.from(ns.get("requests"))
-    let header = ''
-    requestsArray.forEach(request => {
-      header += (request + ';')
-    })
-    res.set('x-xdn-backend-requests', header)
+    const requestsArray = Array.from(ns.get("requests"));
+    let header = "";
+    requestsArray.forEach((request) => {
+      header += request + ";";
+    });
+    res.set("x-layer0-backend-requests", header);
 
-    res.send(html)
-  }
-  res.render('index', { req }, ns.bind(callback));
+    res.send(html);
+  };
+  res.render("index", { req }, ns.bind(callback));
 });
 
-export default app
+export default app;
 ```
 
 ### Service worker
 
-`@xdn/prefetch` relies on Google's `workbox` library. Thus in the context of an Angular app a custom service-worker solution is necessary. Under the `src/sw` directory create the following files:
+`@layer0/prefetch` relies on Google's `workbox` library. Thus in the context of an Angular app a custom service-worker solution is necessary. Under the `src/sw` directory create the following files:
 
 `service-worker.js`
+
 ```js
 import { skipWaiting, clientsClaim } from 'workbox-core'
 import { precacheAndRoute } from 'workbox-precaching'
-import { Prefetcher } from '@xdn/prefetch/sw'
+import { Prefetcher } from '@layer0/prefetch/sw'
 
 declare const self: any;
 
@@ -404,12 +406,19 @@ new Prefetcher().route()
 ```
 
 `webpack.dev.config.js`
+
 ```js
 // DEV Webpack configuration used to build the service worker
 
 const path = require("path");
 const webpack = require("webpack");
-const webBuildTargetFolder = path.join(__dirname, "..", "..", "dist", "xdn-spartacus-app");
+const webBuildTargetFolder = path.join(
+  __dirname,
+  "..",
+  "..",
+  "dist",
+  "layer0-spartacus-app"
+);
 const targetServiceWorkerFilename = "service-worker.js";
 
 module.exports = {
@@ -436,20 +445,21 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      XDN_PREFETCH_QUERY_PARAM: '__prefetch__',
-      XDN_PREFETCH_CACHE_NAME: 'prefetch',
-      XDN_HEADER_PREFETCH_QUERY_PARAM: '__header-prefetch__',
-      PREFETCH_RESPONSE_HEADER_NAME: 'x-xdn-backend-requests',
-      PREFETCH_HEADER_NAME: 'x-xdn-prefetch',
-      XDN_PREFETCH_HEADER_VALUE: '1',
-      NODE_ENV: 'production',
-      DEEP_FETCH_HEADER_NAME: 'x-xdn-deep-prefetch'
-    })
+      LAYER0_PREFETCH_QUERY_PARAM: "__prefetch__",
+      LAYER0_PREFETCH_CACHE_NAME: "prefetch",
+      LAYER0_HEADER_PREFETCH_QUERY_PARAM: "__header-prefetch__",
+      PREFETCH_RESPONSE_HEADER_NAME: "x-layer0-backend-requests",
+      PREFETCH_HEADER_NAME: "x-layer0-prefetch",
+      LAYER0_PREFETCH_HEADER_VALUE: "1",
+      NODE_ENV: "production",
+      DEEP_FETCH_HEADER_NAME: "x-layer0-deep-prefetch",
+    }),
   ],
 };
 ```
 
 `webpack.prod.config.js`
+
 ```js
 const webpackDevConfig = require("./webpack.dev.config");
 
@@ -459,6 +469,7 @@ module.exports = Object.assign({}, webpackDevConfig, {
 ```
 
 `workbox-build-inject.js`
+
 ```js
 // Script that modifies the service-worker.js configuration using workbox-build
 // Reference: https://developers.google.com/web/tools/workbox/modules/workbox-build
@@ -470,15 +481,20 @@ const workboxConfig = require("./workbox-config");
 console.log(`Workbox configuration: `, workboxConfig);
 
 injectManifest(workboxConfig).then(({ count, size }) => {
-  console.log(`Generated ${workboxConfig.swDest}, which will precache ${count} files (${size} bytes)`);
+  console.log(
+    `Generated ${workboxConfig.swDest}, which will precache ${count} files (${size} bytes)`
+  );
 });
 ```
 
 `workbox-config.js`
+
 ```js
 module.exports = {
-  globDirectory: "dist/xdn-spartacus-app/",
-  globPatterns: ["**/*.{css,eot,html,ico,jpg,js,json,png,svg,ttf,txt,webmanifest,woff,woff2,webm,xml}"],
+  globDirectory: "dist/layer0-spartacus-app/",
+  globPatterns: [
+    "**/*.{css,eot,html,ico,jpg,js,json,png,svg,ttf,txt,webmanifest,woff,woff2,webm,xml}",
+  ],
   globFollow: true, // follow symlinks
   globStrict: true, // fail the build if anything goes wrong while reading the files
   globIgnores: [`**/*-es5.*.js`],
@@ -486,18 +502,19 @@ module.exports = {
   // Allows to avoid using cache busting for Angular files because Angular already takes care of that!
   dontCacheBustURLsMatching: new RegExp(".+.[a-f0-9]{20}..+"),
   maximumFileSizeToCacheInBytes: 4 * 1024 * 1024, // 4Mb
-  swSrc: "dist/xdn-spartacus-app/service-worker.js",
-  swDest: "dist/xdn-spartacus-app/service-worker.js",
+  swSrc: "dist/layer0-spartacus-app/service-worker.js",
+  swDest: "dist/layer0-spartacus-app/service-worker.js",
 };
 ```
 
 These files form the base for building a functional service-worker and can be further customized for any app-specific needs.
 
 To build the service worker add the following command to `package.json`:
+
 ```js
 {
   ...
-  "build:pwa:web": "rimraf ./dist/xdn-spartacus-app/service-worker.js && webpack --config ./src/sw/webpack.prod.config.js --progress --colors && node ./src/sw/workbox-build-inject.js",
+  "build:pwa:web": "rimraf ./dist/layer0-spartacus-app/service-worker.js && webpack --config ./src/sw/webpack.prod.config.js --progress --colors && node ./src/sw/workbox-build-inject.js",
   "postbuild:ssr": "npm run build:pwa:web",
   ...
 }
@@ -506,6 +523,7 @@ To build the service worker add the following command to `package.json`:
 `workbox-build` needs to be installed for the injection.
 
 Add a polyfill for `window.process` if not already present in `polyfills.ts`:
+
 ```js
 ...
 (window as any).process = {
@@ -516,36 +534,37 @@ Add a polyfill for `window.process` if not already present in `polyfills.ts`:
 ...
 ```
 
-The build command places the built `service-worker.js` under `dist` so `@xdn/angular` will know to static serve the file.
+The build command places the built `service-worker.js` under `dist` so `@layer0/angular` will know to static serve the file.
 
-Installing the service worker and any further prefetching will be handled by `@xdn/prefetch` by invoking the `install` function imported from `@xdn/prefetch/window/install`.
+Installing the service worker and any further prefetching will be handled by `@layer0/prefetch` by invoking the `install` function imported from `@layer0/prefetch/window/install`.
 
 Example implementation in `app.component.ts`:
+
 ```js
-import { Component, OnInit, Inject } from '@angular/core';
-import install from '@xdn/prefetch/window/install';
-import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject } from "@angular/core";
+import install from "@layer0/prefetch/window/install";
+import { isPlatformBrowser } from "@angular/common";
+import { PLATFORM_ID } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-  isBrowser: boolean
-  title = 'xdn-spartacus-app';
+  isBrowser: boolean;
+  title = "layer0-spartacus-app";
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
-    this.isBrowser = isPlatformBrowser(platformId)
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
     setTimeout(() => {
       if (this.isBrowser) {
-        install()
+        install();
       }
-    })
+    });
   }
 }
 ```
@@ -555,20 +574,21 @@ export class AppComponent implements OnInit {
 An example cache configuration to optimally support prefetching:
 
 `routes.js`
+
 ```js
-// This file was automatically added by xdn deploy.
+// This file was automatically added by layer0 deploy.
 // You should commit this file to source control.
 
-const { Router } = require('@xdn/core/router')
-const createAngularPlugin = require('@xdn/angular/router/createAngularPlugin')
+const { Router } = require("@layer0/core/router");
+const createAngularPlugin = require("@layer0/angular/router/createAngularPlugin");
 
-const PAGE_TTL = 60 * 60 * 24
-const FAR_FUTURE_TTL = 60 * 60 * 24 * 365 * 10
+const PAGE_TTL = 60 * 60 * 24;
+const FAR_FUTURE_TTL = 60 * 60 * 24 * 365 * 10;
 
-module.exports = app => {
-  const { angularMiddleware } = createAngularPlugin(app)
+module.exports = (app) => {
+  const { angularMiddleware } = createAngularPlugin(app);
   return new Router()
-    .match('/rest/v2/*path', ({ cache, proxy }) => {
+    .match("/rest/v2/*path", ({ cache, proxy }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -578,10 +598,10 @@ module.exports = app => {
           maxAgeSeconds: PAGE_TTL,
           staleWhileRevalidateSeconds: PAGE_TTL,
         },
-      })
-      return proxy('commerce')
+      });
+      return proxy("commerce");
     })
-    .match('/medias/*path', ({ cache, proxy }) => {
+    .match("/medias/*path", ({ cache, proxy }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -591,10 +611,10 @@ module.exports = app => {
           maxAgeSeconds: FAR_FUTURE_TTL,
           staleWhileRevalidateSeconds: 60 * 60 * 24,
         },
-      })
-      return proxy('commerce')
+      });
+      return proxy("commerce");
     })
-    .match('/Open-Catalogue/*path', ({cache}) => {
+    .match("/Open-Catalogue/*path", ({ cache }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -605,9 +625,9 @@ module.exports = app => {
           maxAgeSeconds: PAGE_TTL,
           staleWhileRevalidateSeconds: PAGE_TTL,
         },
-      })
+      });
     })
-    .match('/product/*path', ({cache}) => {
+    .match("/product/*path", ({ cache }) => {
       cache({
         browser: {
           maxAgeSeconds: PAGE_TTL,
@@ -618,13 +638,13 @@ module.exports = app => {
           maxAgeSeconds: PAGE_TTL,
           staleWhileRevalidateSeconds: PAGE_TTL,
         },
-      })
+      });
     })
-    .use(angularMiddleware)
-}
+    .use(angularMiddleware);
+};
 ```
 
-Notice the `spa: true` in `/product/*path` and `/Open-Catalogue/*path` browser cache configuration. These are both routes that can appear in the form of links on any given page. With `spa: true` `@xdn/prefetch` will know to optimally only fully prefetch the upstream requests specified in the cached responses for those routes.
+Notice the `spa: true` in `/product/*path` and `/Open-Catalogue/*path` browser cache configuration. These are both routes that can appear in the form of links on any given page. With `spa: true` `@layer0/prefetch` will know to optimally only fully prefetch the upstream requests specified in the cached responses for those routes.
 
 NB! To avoid spartacus installing ngsw-worker set `production: false` in `environment.prod.ts` as a temporary workaround.
 Add `"skipLibCheck": true,` to `tsconfig.json` to avoid type errors from `workbox` library during build.

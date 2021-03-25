@@ -1,6 +1,6 @@
 import { CACHE_PAGES } from './cache'
-import { RouteHandler } from '@xdn/core/router/Router'
-import { injectBrowserScript } from '@xdn/starter'
+import { RouteHandler } from '@layer0/core/router/Router'
+import { injectBrowserScript } from '@layer0/starter'
 
 const handler: RouteHandler = async ({ cache, removeUpstreamResponseHeader, proxy }) => {
   cache(CACHE_PAGES)
