@@ -1,2 +1,3 @@
-# xdn-templates
-Templates used with create-xdn-app
+# Layer0 Templates
+
+Templates used with create-layer0-app
