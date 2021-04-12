@@ -1,11 +1,11 @@
 {
   "name": "shopify-template",
   "devDependencies": {
-    "@layer0/cli": "^3.0.1-next-1616590389-ebf3f1dd.0",
-    "@layer0/core": "^3.0.1-next-1616590389-ebf3f1dd.0",
-    "@layer0/devtools": "^3.0.1-next-1616590389-ebf3f1dd.0",
-    "@layer0/prefetch": "^3.0.1-next-1616590389-ebf3f1dd.0",
-    "@layer0/starter": "^3.0.1-next-1616590389-ebf3f1dd.0",
+    "@layer0/cli": "^3.0.0",
+    "@layer0/core": "^3.0.0",
+    "@layer0/devtools": "^3.0.0",
+    "@layer0/prefetch": "^3.0.0",
+    "@layer0/starter": "^3.0.0",
     "@types/node": "^13.13.2",
     "concurrently": "^5.2.0",
     "prettier": "^2.0.5",
