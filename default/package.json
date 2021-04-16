@@ -1,5 +1,5 @@
 {
-  "name": "default-starter-template",
+  "name": "default",
   "devDependencies": {
     "@layer0/cli": "^3.0.0",
     "@layer0/core": "^3.0.0",
