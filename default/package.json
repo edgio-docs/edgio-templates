@@ -20,7 +20,8 @@
     "start": "layer0 dev",
     "build": "layer0 build",
     "prod": "layer0 run --production",
-    "deploy": "npm run build && layer0 deploy --skip-build"
+    "deploy": "npm run build && layer0 deploy --skip-build",
+    "test": "jest"
   },
   "dependencies": {}
 }
