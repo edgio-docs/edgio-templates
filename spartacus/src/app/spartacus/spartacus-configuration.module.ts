@@ -14,8 +14,6 @@ import {
 } from '@spartacus/storefront';
 import { environment } from '../../environments/environment';
 
-console.log('environment', environment);
-
 @NgModule({
   declarations: [],
   imports: [],
@@ -35,6 +33,7 @@ console.log('environment', environment);
       context: {
         currency: ['USD'],
         language: ['en'],
+        baseSite: ['electronics-spa'],
       },
     }),
     provideConfig(<I18nConfig>{
