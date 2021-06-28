@@ -62,7 +62,7 @@
     "@babel/preset-typescript": "^7.14.5",
     "@layer0/angular": "^3.16.0",
     "@layer0/cli": "^3.16.0",
-    "@layer0/core": "file:.yalc/@layer0/core",
+    "@layer0/core": "^3.16.0",
     "@layer0/devtools": "^3.16.0",
     "@layer0/prefetch": "^3.16.0",
     "@layer0/spartacus": "^3.16.0",
