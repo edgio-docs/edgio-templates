@@ -1,14 +1,14 @@
 {
-  "name": "default",
+  "name": "layer0-default-template",
   "devDependencies": {
-    "@layer0/cli": "^3.0.0",
-    "@layer0/core": "^3.0.0",
-    "@layer0/devtools": "^3.0.0",
-    "@layer0/prefetch": "^3.0.0",
-    "@layer0/starter": "^3.0.0",
     "@types/node": "^13.13.2",
-    "prettier": "^2.0.5",
-    "typescript": "^3.8.3"
+    "@layer0/cli": "^4.2.0",
+    "@layer0/core": "^4.2.0",
+    "@layer0/devtools": "^4.2.0",
+    "@layer0/prefetch": "^4.2.0",
+    "@layer0/starter": "^4.2.0",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
   },
   "scripts": {
     "start": "layer0 dev",

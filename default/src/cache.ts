@@ -2,11 +2,12 @@ const ONE_HOUR = 60 * 60
 const ONE_DAY = 24 * ONE_HOUR
 
 /**
- * The default cache setting for pages in the shopping flow
+ * The default cache setting for pages
  */
 export const CACHE_PAGES = {
     edge: {
         maxAgeSeconds: ONE_HOUR,
+        forcePrivateCaching: true
     },
     browser: {
         maxAgeSeconds: 0,
@@ -20,6 +21,7 @@ export const CACHE_PAGES = {
 export const CACHE_ASSETS = {
     edge: {
         maxAgeSeconds: ONE_DAY,
+        forcePrivateCaching: true
     },
     browser: {
         maxAgeSeconds: 0,
