@@ -12,10 +12,6 @@
       "ES2020"
     ]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src", "test"],
+  "exclude": ["node_modules"]
 }
