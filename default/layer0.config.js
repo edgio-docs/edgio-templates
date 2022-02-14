@@ -3,8 +3,8 @@ module.exports = {
   connector: '@layer0/starter',
   backends: {
     origin: {
-      domainOrIp: 'moovdemo.myshopify.com',
-      hostHeader: 'moovdemo.myshopify.com',
+      domainOrIp: 'layer0.co',
+      hostHeader: 'layer0.co',
     },
   },
 }
