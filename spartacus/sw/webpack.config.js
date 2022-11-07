@@ -7,7 +7,7 @@ module.exports = {
   entry: join(__dirname, 'service-worker.js'),
   resolve: { extensions: ['.js', '.ts'] },
   output: {
-    path: join(__dirname, '..', 'dist', '__layer0__'),
+    path: join(__dirname, '..', 'dist', '__edgio__'),
     filename: 'service-worker.js',
   },
   plugins: [

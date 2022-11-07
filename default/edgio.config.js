@@ -3,8 +3,8 @@ module.exports = {
   connector: '@edgio/starter',
   backends: {
     origin: {
-      domainOrIp: '{answers.origin}',
-      hostHeader: '{answers.origin}',
+      domainOrIp: 'edg.io',
+      hostHeader: 'edg.io',
     },
   },
 }

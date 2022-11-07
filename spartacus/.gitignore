@@ -45,4 +45,4 @@ testem.log
 .DS_Store
 Thumbs.db
 # Layer0 generated build directory
-.layer0
+.edgio

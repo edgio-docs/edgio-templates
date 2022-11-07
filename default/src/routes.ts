@@ -1,5 +1,5 @@
-import { Router } from '@layer0/core/router'
-import { starterRoutes } from '@layer0/starter'
+import { Router } from '@edgio/core/router'
+import { starterRoutes } from '@edgio/starter'
 import { CACHE_ASSETS } from './cache'
 import routeHandler from './route-handler'
 

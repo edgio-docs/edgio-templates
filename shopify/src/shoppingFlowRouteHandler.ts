@@ -1,5 +1,5 @@
 import { CACHE_PAGES } from './cache'
-import { RouteHandler } from '@layer0/core/router/Router'
+import { RouteHandler } from '@edgio/core/router/Router'
 
 const handler: RouteHandler = async ({
   cache,

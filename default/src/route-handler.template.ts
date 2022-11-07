@@ -1,6 +1,6 @@
 import { CACHE_PAGES } from './cache'
-import { RouteHandler } from '@layer0/core/router/Router'
-import { injectBrowserScript } from '@layer0/starter'
+import { RouteHandler } from '@edgio/core/router/Router'
+import { injectBrowserScript } from '@edgio/starter'
 
 const handler: RouteHandler = async ({ cache, removeUpstreamResponseHeader, proxy, updateResponseHeader }) => {
   cache(CACHE_PAGES)
