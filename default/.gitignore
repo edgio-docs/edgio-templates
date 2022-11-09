@@ -1,5 +1,7 @@
-/.layer0
+/.edgio
 /node_modules
 /dist
 /.yalc
+/.idea
+/.vscode
 yalc.lock

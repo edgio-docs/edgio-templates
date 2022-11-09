@@ -1,5 +1,5 @@
 import routes from '../routes';
-import { runRoute, backendHost, appHost } from '@layer0/core/test-utils';
+import { runRoute, backendHost, appHost } from '@edgio/core/test-utils';
 import nock from 'nock';
 
 describe('routes', () => {

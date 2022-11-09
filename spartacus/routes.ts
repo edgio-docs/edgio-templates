@@ -1,8 +1,8 @@
-// This file was automatically added by layer0 deploy.
+// This file was automatically added by edgio deploy.
 // You should commit this file to source control.
 
-import { Router } from '@layer0/core/router';
-import { angularRoutes } from '@layer0/angular';
+import { Router } from '@edgio/core/router';
+import { angularRoutes } from '@edgio/angular';
 
 const PAGE_TTL = 60 * 60 * 24;
 const FAR_FUTURE_TTL = 60 * 60 * 24 * 365 * 10;

@@ -1,3 +1,3 @@
-# Layer0 Templates
+# Edgio Templates
 
-Templates used with create-layer0-app
+Templates used with create-edgio-app

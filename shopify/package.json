@@ -4,11 +4,11 @@
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
-    "@layer0/cli": "^4.10.2",
-    "@layer0/core": "^4.10.2",
-    "@layer0/devtools": "^4.10.2",
-    "@layer0/prefetch": "^4.10.2",
-    "@layer0/starter": "^4.10.2",
+    "@edgio/cli": "^5.0.3",
+    "@edgio/core": "^5.0.3",
+    "@edgio/devtools": "^5.0.3",
+    "@edgio/prefetch": "^5.0.3",
+    "@edgio/starter": "^5.0.3",
     "@types/jest": "^26.0.23",
     "@types/node": "^13.13.2",
     "babel-jest": "^27.0.5",
@@ -23,13 +23,13 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "start": "concurrently \"webpack --watch\" \"layer0 run\"",
+    "start": "concurrently \"webpack --watch\" \"edgio run\"",
     "test": "jest",
-    "build": "webpack --progress && layer0 build",
-    "prod": "layer0 run --production",
-    "deploy": "npm run build && layer0 deploy --skip-build",
-    "layer0": "layer0",
-    "layer0:update": "npm i --save-dev @layer0/cli@latest @layer0/core@latest @layer0/prefetch@latest",
-    "layer0:link": "yalc add @layer0/core @layer0/prefetch @layer0/cli"
+    "build": "webpack --progress && edgio build",
+    "prod": "edgio run --production",
+    "deploy": "npm run build && edgio deploy --skip-build",
+    "edgio": "edgio",
+    "edgio:update": "npm i --save-dev @edgio/cli@latest @edgio/core@latest @edgio/prefetch@latest",
+    "edgio:link": "yalc add @edgio/core @edgio/prefetch @edgio/cli"
   }
 }

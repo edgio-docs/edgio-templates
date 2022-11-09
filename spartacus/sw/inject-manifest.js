@@ -1,10 +1,10 @@
 // Script that modifies the service-worker.js configuration using workbox-build
 // Reference: https://developers.google.com/web/tools/workbox/modules/workbox-build
 
-const { getBuildPath } = require('@layer0/angular/utils/getBuildPath')
+const { getBuildPath } = require('@edgio/angular/utils/getBuildPath')
 const { injectManifest } = require('workbox-build')
 const { join } = require('path')
-const swSrc = join(__dirname, '..', 'dist', '__layer0__', 'service-worker.js')
+const swSrc = join(__dirname, '..', 'dist', '__edgio__', 'service-worker.js')
 
 injectManifest({
   swSrc,
